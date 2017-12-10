@@ -1,0 +1,4 @@
+Jak odpalic:
+1) na poczatku w katalogu odpalamy "npm i" (lub sudo npm i) by zainstalowac wszystko
+2) glowny plik to server.js. Odpalamy go "node server.js"
+3) Trzeba spojrzec w ten plik. Domyslnie otwiera plik index.html

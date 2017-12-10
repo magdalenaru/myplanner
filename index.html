@@ -1,15 +1,107 @@
-<!DOCTYPE html>
-<html lang="pl-PL">
-<head>
-    <meta charset="UTF-8">
-    <title>MyPlanner</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
-</head>
-<body>
-        <h1>To będzie kiedyś planner :) </h1>
-        <strong>Kalendarz</strong>
+<!doctype html>
+<html class="no-js" lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+      <!--Actual weekly planner starts here-->
+      <h2>My weekly planner</h2>
+        <span>Current week goals, tasks and events</span>
+        <button id="authorize-button">Connect your gmail account</button>
+        <button id="signout-button" style="display: none;">Sign Out from gmail</button>
+        <pre id="content"></pre>
+        
+        <table class="table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>
+                <span class="day">1</span>
+                <span class="long">Today</span>
+                <span class="date"></span>
+              </th>
+              <th>
+                <span class="day">2</span>
+                <span class="long">Tomorrow</span>
+                <span class="date"></span>
+              </th>
+              <th>
+                <span class="day">3</span>
+                <span class="long">After tomorrow</span>
+                <span class="date"></span>
+              </th>
+              <th>
+                <span class="day">4</span>
+                <span class="long">Thursday</span>
+                <span class="date"></span>
+              </th>
+              <th>
+                <span class="day active">5</span>
+                <span class="long">Friday</span>
+                <span class="date"></span>
+              </th>
+              <th>
+                <span class="day">6</span>
+                <span class="long">Saturday</span>
+                <span class="date"></span>
+              </th>
+              <th>
+                <span class="day">7</span>
+                <span class="long">Sunday</span>
+                <span class="date"></span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <th class="allDay">
+            </th>
+            <th class="events_day">
+              <ul id="allDay_list">All Day events:</ul>
+              <ul id="today_list">Events by hour:</ul>
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tbody>
+        </table>
+        
+        
+        <form class="form" id="eventForm">
+          <h3>Add new event</h3>
+          <div class="form-row">
+            <label for="field-summary">Event Name*</label>
+            <input type="text" name="summary" id="input_name">
+          </div>
+          <div class="form-row">
+            <label for="field-description">Description*</label>
+            <textarea name="description" id="input_description" form="eventForm"></textarea>
+          </div>
+          <div class="form-row">
+            <label for="field-location">Location*</label>
+            <input type="text" id="input_location" name="location">
+          </div>
+          <div class="form-row">
+            <label for="field-starttime">Start Date/Time*</label>
+            <input type="datetime-local" name="starttime">
+          </div>
+          <div class="form-row">
+            <label for="field-starttime">End Date/Time*</label>
+            <input type="datetime-local" name="starttime">
+          </div>
+          <button id="create-event" class="submit-btn">Create New Event</button>
+        </form>
 
-</body>
-<script src="js/app.js" type="text/javascript"></script>
+    </body>
+   
+    <script src="js/APIconnect.js" type="text/javascript"></script>
+    <script src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+    <script src="js/app.js" type="text/javascript"></script>
 </html>

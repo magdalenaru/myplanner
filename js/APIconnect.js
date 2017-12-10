@@ -128,9 +128,16 @@
 
 //list events in console & in every day
     function listEvents(){
+
+        var today = new Date();
+        console.log(today);
+        var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
+        console.log(tomorrow);
+
         let request = gapi.client.calendar.events.list({
             'calendarId': 'primary',
             'timeMin': (new Date()).toISOString(),
+            'timeMax': tomorrow.toISOString(),
             'maxResults': 10,
             'singleEvents': true,
             'orderBy': 'startTime'
@@ -138,20 +145,26 @@
         request.execute(function(resp){
             let todayEvents = resp.items;
             console.log(todayEvents);
-            let today = document.getElementsByClassName('events_day');
-            console.log(today);
+            // let today = document.getElementsByClassName('events_day');
+            // console.log(today);
 
             todayEvents.forEach(function(element) {
                 let newLi = document.createElement("LI");
                 console.log(newLi);
-        
-                let when = element.start.dateTime;
                 
-                if (!when) {
-                when = "all day";
-                } 
+                let when = new Date(element.start.dateTime);
                 
-                newLi.innerHTML = when + " " + element.summary;
+                // if (!when) {
+                // when = " - ";
+                // } 
+                let eventHour = `${when.toLocaleTimeString()}`
+                if (eventHour =="Invalid Date") {
+                    eventHour = "ALL DAY: "
+                }
+
+                console.log(`WHEN IS : ${eventHour}`);
+                
+                newLi.innerHTML = eventHour + " " + element.summary;
                 console.log(newLi.innerHTML);
 
                 if (when == "all day") {
@@ -187,11 +200,11 @@
             'description': eventDescription,
             'start': {
                 'dateTime': '2017-12-11T09:00:00-07:00',
-                'timeZone': 'Europe/Warsaw'
+                //'timeZone': 'Europe/Warsaw'
             },
             'end': {
                 'dateTime': '2017-12-11T11:00:00-07:00',
-                'timeZone': 'Europe/Warsaw'
+                //'timeZone': 'Europe/Warsaw'
             },
         }
         

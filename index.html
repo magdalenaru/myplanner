@@ -14,10 +14,8 @@
       <h2>My weekly planner</h2>
       <span>"The key is not to prioritize what's on your schedule, but to schedule your priorities." Stephen Covey</span>
       <pre id="content"></pre>
-      <button class ="google-button" id="buttonGoal">Add your weekly goals</button>
+
       <div>
-        <ol class="seven-habits" id="mygoals"><h3>My weekly goals</h3>
-        </ol>
         <ol class="seven-habits"><h3>Remember the 7 habits?</h3>
           <li>Be proactive</li>
           <li>Begin with the end in mind</li>
@@ -28,6 +26,11 @@
           <li>Sharpen the saw</li>
         </ol>
       </div>
+      <button class ="google-button" id="buttonGoal">Add your weekly goals</button>
+      <div>
+        <ol class="seven-habits" id="mygoals"><h3>My weekly goals</h3>
+        </ol> 
+      </div>
       <button id="authorize-button" class ="google-button">Connect to your google calendar</button>
       <button id="signout-button" class ="google-button" style="display: none;">Sign out from google</button>
       <table class="table"><h3>My schedule</h3>
@@ -36,10 +39,10 @@
             <th></th>
             <th>
               <span class="day"></span>
-              <span class="long">Today</span>
+              <span class="long"></span>
               <span class="date"></span>
             </th>
-            <th>
+            <!--<th>
               <span class="day"></span>
               <span class="long">Tomorrow</span>
               <span class="date"></span>
@@ -48,7 +51,7 @@
               <span class="day"></span>
               <span class="long">After tomorrow</span>
               <span class="date"></span>
-            </th>
+            </th>-->
             <!--<th>
               <span class="day">4</span>
               <span class="long">Thursday</span>
@@ -76,16 +79,16 @@
           </th>
           <th class="events_day">
             <ul id="allDay_list">All Day events:</ul>
-            <ul id="today_list">Events:</ul>
+            <ul id="today_list">Coming events:</ul>
           </th>
-          <th class="events_day">
+          <!--<th class="events_day">
             <ul id="allDay2_list">All Day events:</ul>
             <ul id="today2_list">Events by hour:</ul>
           </th>
           <th class="events_day">
             <ul id="allDay3_list">All Day events:</ul>
             <ul id="today3_list">Events by hour:</ul>
-          </th>
+          </th>-->
           <!--<th></th>
           <th></th>
           <th></th>

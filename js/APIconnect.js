@@ -129,12 +129,13 @@
 
         var today = new Date();
         console.log(today);
-        var tomorrow = new Date(today.getTime() + (24 * 60 * 60 * 1000));
+        var tomorrow = new Date(today.getTime() + (72 * 60 * 60 * 1000));
         console.log(tomorrow);
 
         let request = gapi.client.calendar.events.list({
             'calendarId': 'primary',
             'timeMin': (new Date()).toISOString(),
+            //'timeMax': (new Date()).toISOString(),
             'timeMax': tomorrow.toISOString(),
             'maxResults': 10,
             'singleEvents': true,
@@ -143,18 +144,12 @@
         request.execute(function(resp){
             let todayEvents = resp.items;
             console.log(todayEvents);
-            // let today = document.getElementsByClassName('events_day');
-            // console.log(today);
 
             todayEvents.forEach(function(element) {
                 let newLi = document.createElement("LI");
-                console.log(newLi);
                 
                 let when = new Date(element.start.dateTime);
-                
-                // if (!when) {
-                // when = " - ";
-                // } 
+
                 let eventHour = `${when.toLocaleTimeString()}`
                 if (eventHour =="Invalid Date") {
                     eventHour = "ALL DAY: "
@@ -198,11 +193,11 @@
             'location': eventLocation,
             'description': eventDescription,
             'start': {
-                'dateTime': '2017-12-11T09:00:00-07:00',
+                'dateTime': '2017-12-17T17:00:00-07:00',
                 //'timeZone': 'Europe/Warsaw'
             },
             'end': {
-                'dateTime': '2017-12-11T11:00:00-07:00',
+                'dateTime': '2017-12-17T19:00:00-07:00',
                 //'timeZone': 'Europe/Warsaw'
             },
         }

@@ -38,9 +38,12 @@ h2, h3 {
 	background: #5C9EAD;
 }
 
+/*.events_day*/
+
 #today_list {
 	list-style-type: none;
-	color: #EEEEEE;
+	text-align: left;
+	/*color: #EEEEEE;*/
 }
 
 #today_list li {

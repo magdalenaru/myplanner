@@ -4,9 +4,12 @@
 
 body {
 	font-size: 100%;
-	text-align: center;
 	color: #000000;
     background: #EEEEEE;
+}
+
+h2, h3 {
+	text-align: center;
 }
 
 .google-button {
@@ -19,6 +22,17 @@ body {
     font-size:0.8rem;
     transition: 0.3s background-color;
 }
+
+.seven-habits {
+	background: #EEEEEE;
+    padding: 5px;
+    margin-left: 10px;
+	margin-right: 10px;
+	text-align: left;
+	display: inline-block;
+	width: 250px;
+}
+
 
 .table {
 	background: #5C9EAD;

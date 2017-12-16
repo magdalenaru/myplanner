@@ -10,32 +10,46 @@
     <body>
       <!--Actual weekly planner starts here-->
 
+      
+      <h2>My weekly planner</h2>
+      <span>"The key is not to prioritize what's on your schedule, but to schedule your priorities." Stephen Covey</span>
+      <pre id="content"></pre>
+      <button class ="google-button" id="buttonGoal">Add your weekly goals</button>
+      <div>
+        <ol class="seven-habits" id="mygoals"><h3>My weekly goals</h3>
+        </ol>
+        <ol class="seven-habits"><h3>Remember the 7 habits?</h3>
+          <li>Be proactive</li>
+          <li>Begin with the end in mind</li>
+          <li>Put First things First</li>
+          <li>Think Win-Win</li>
+          <li>Seek first to understand, then to be understood</li>
+          <li>Synergize (creative cooperation)</li>
+          <li>Sharpen the saw</li>
+        </ol>
+      </div>
       <button id="authorize-button" class ="google-button">Connect to your google calendar</button>
       <button id="signout-button" class ="google-button" style="display: none;">Sign out from google</button>
-      <h2>My weekly planner</h2>
-      <span>Current week goals, tasks and events</span>
-      <pre id="content"></pre>
-        
-      <table class="table">
+      <table class="table"><h3>My schedule</h3>
         <thead>
           <tr>
             <th></th>
             <th>
-              <span class="day">1</span>
+              <span class="day"></span>
               <span class="long">Today</span>
               <span class="date"></span>
             </th>
             <th>
-              <span class="day">2</span>
+              <span class="day"></span>
               <span class="long">Tomorrow</span>
               <span class="date"></span>
             </th>
             <th>
-              <span class="day">3</span>
+              <span class="day"></span>
               <span class="long">After tomorrow</span>
               <span class="date"></span>
             </th>
-            <th>
+            <!--<th>
               <span class="day">4</span>
               <span class="long">Thursday</span>
               <span class="date"></span>
@@ -54,7 +68,7 @@
               <span class="day">7</span>
               <span class="long">Sunday</span>
               <span class="date"></span>
-            </th>
+            </th>-->
           </tr>
         </thead>
         <tbody>
@@ -72,10 +86,10 @@
             <ul id="allDay3_list">All Day events:</ul>
             <ul id="today3_list">Events by hour:</ul>
           </th>
+          <!--<th></th>
           <th></th>
           <th></th>
-          <th></th>
-          <th></th>
+          <th></th>-->
         </tbody>
       </table>
         

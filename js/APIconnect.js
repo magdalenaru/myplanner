@@ -1,10 +1,8 @@
   // Client ID and API key from the Developer Console
       var CLIENT_ID = '428606272679-irhs7v69dclkc7rvtea53vbuu83ktf3s.apps.googleusercontent.com';
       var API_KEY = 'AIzaSyA4vCXHm_IOsyOOq7tn-yqYLGjx6x-ePgo';
-
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-
       // Authorization scopes required by the API; multiple scopes can be
       // included, separated by spaces.
       var SCOPES = "https://www.googleapis.com/auth/calendar";
@@ -221,3 +219,29 @@
         });
         }); 
     }
+//Create Goal & add them to the list
+
+  function addGoal () {
+    const buttonGoal = document.getElementById("buttonGoal");
+    console.log(buttonGoal);
+   
+    buttonGoal.addEventListener("click", function (e) {
+      console.log("jest - udalo sie!");
+      let goal = prompt("What do you want to achieve this week?", "watch Kevin Sam w domu?");
+
+      if (goal == null || goal == "") {
+          txt = "No goals for today";
+      } else {
+          txt = goal;
+      }
+      let newLi = document.createElement("LI");
+      console.log(newLi);
+      newLi.innerHTML = txt;
+      console.log(newLi.innerHTML);
+ 
+      document.getElementById("mygoals").appendChild(newLi)
+
+    });
+  };
+
+  addGoal ();

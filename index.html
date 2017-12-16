@@ -9,100 +9,101 @@
     </head>
     <body>
       <!--Actual weekly planner starts here-->
+
+      <button id="authorize-button" class ="google-button">Connect to your google calendar</button>
+      <button id="signout-button" class ="google-button" style="display: none;">Sign out from google</button>
       <h2>My weekly planner</h2>
-        <span>Current week goals, tasks and events</span>
-        <button id="authorize-button">Connect your gmail account</button>
-        <button id="signout-button" style="display: none;">Sign Out from gmail</button>
-        <pre id="content"></pre>
+      <span>Current week goals, tasks and events</span>
+      <pre id="content"></pre>
         
-        <table class="table">
-          <thead>
-            <tr>
-              <th></th>
-              <th>
-                <span class="day">1</span>
-                <span class="long">Today</span>
-                <span class="date"></span>
-              </th>
-              <th>
-                <span class="day">2</span>
-                <span class="long">Tomorrow</span>
-                <span class="date"></span>
-              </th>
-              <th>
-                <span class="day">3</span>
-                <span class="long">After tomorrow</span>
-                <span class="date"></span>
-              </th>
-              <th>
-                <span class="day">4</span>
-                <span class="long">Thursday</span>
-                <span class="date"></span>
-              </th>
-              <th>
-                <span class="day active">5</span>
-                <span class="long">Friday</span>
-                <span class="date"></span>
-              </th>
-              <th>
-                <span class="day">6</span>
-                <span class="long">Saturday</span>
-                <span class="date"></span>
-              </th>
-              <th>
-                <span class="day">7</span>
-                <span class="long">Sunday</span>
-                <span class="date"></span>
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <th class="allDay">
-            </th>
-            <th class="events_day">
-              <ul id="allDay_list">All Day events:</ul>
-              <ul id="today_list">Events by hour:</ul>
-            </th>
-            <th class="events_day">
-              <ul id="allDay2_list">All Day events:</ul>
-              <ul id="today2_list">Events by hour:</ul>
-            </th>
-            <th class="events_day">
-              <ul id="allDay3_list">All Day events:</ul>
-              <ul id="today3_list">Events by hour:</ul>
-            </th>
+      <table class="table">
+        <thead>
+          <tr>
             <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-          </tbody>
-        </table>
+            <th>
+              <span class="day">1</span>
+              <span class="long">Today</span>
+              <span class="date"></span>
+            </th>
+            <th>
+              <span class="day">2</span>
+              <span class="long">Tomorrow</span>
+              <span class="date"></span>
+            </th>
+            <th>
+              <span class="day">3</span>
+              <span class="long">After tomorrow</span>
+              <span class="date"></span>
+            </th>
+            <th>
+              <span class="day">4</span>
+              <span class="long">Thursday</span>
+              <span class="date"></span>
+            </th>
+            <th>
+              <span class="day active">5</span>
+              <span class="long">Friday</span>
+              <span class="date"></span>
+            </th>
+            <th>
+              <span class="day">6</span>
+              <span class="long">Saturday</span>
+              <span class="date"></span>
+            </th>
+            <th>
+              <span class="day">7</span>
+              <span class="long">Sunday</span>
+              <span class="date"></span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <th class="allDay">
+          </th>
+          <th class="events_day">
+            <ul id="allDay_list">All Day events:</ul>
+            <ul id="today_list">Events:</ul>
+          </th>
+          <th class="events_day">
+            <ul id="allDay2_list">All Day events:</ul>
+            <ul id="today2_list">Events by hour:</ul>
+          </th>
+          <th class="events_day">
+            <ul id="allDay3_list">All Day events:</ul>
+            <ul id="today3_list">Events by hour:</ul>
+          </th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tbody>
+      </table>
         
         
-        <form class="form" id="eventForm">
-          <h3>Add new event</h3>
-          <div class="form-row">
-            <label for="field-summary">Event Name*</label>
-            <input type="text" name="summary" id="input_name">
-          </div>
-          <div class="form-row">
-            <label for="field-description">Description*</label>
-            <textarea name="description" id="input_description" form="eventForm"></textarea>
-          </div>
-          <div class="form-row">
-            <label for="field-location">Location*</label>
-            <input type="text" id="input_location" name="location">
-          </div>
-          <div class="form-row">
-            <label for="field-starttime">Start Date/Time*</label>
-            <input type="datetime-local" name="starttime">
-          </div>
-          <div class="form-row">
-            <label for="field-starttime">End Date/Time*</label>
-            <input type="datetime-local" name="starttime">
-          </div>
-          <button id="create-event" class="submit-btn">Create New Event</button>
-        </form>
+      <form class="form" id="eventForm">
+        <h3>Add new event</h3>
+        <div class="form-row">
+          <label for="field-summary">Event Name*</label>
+          <input type="text" name="summary" id="input_name">
+        </div>
+        <div class="form-row">
+          <label for="field-description">Description*</label>
+          <textarea name="description" id="input_description" form="eventForm"></textarea>
+        </div>
+        <div class="form-row">
+          <label for="field-location">Location*</label>
+          <input type="text" id="input_location" name="location">
+        </div>
+        <div class="form-row">
+          <label for="field-starttime">Start Date/Time*</label>
+          <input type="datetime-local" name="starttime">
+        </div>
+        <div class="form-row">
+          <label for="field-starttime">End Date/Time*</label>
+          <input type="datetime-local" name="starttime">
+        </div>
+        <button id="create-event" class="submit-btn">Create New Event</button>
+      </form>
 
     </body>
    

@@ -161,14 +161,15 @@
                 if (eventHour =="Invalid Date") {
                     eventHour = "ALL DAY: "
                 }
+                console.log(eventHour);
 
                 console.log(`WHEN IS : ${eventHour}`);
                 
                 newLi.innerHTML = eventHour + " " + element.summary;
                 console.log(newLi.innerHTML);
 
-                if (when == "all day") {
-                    console.log(when);
+                if (eventHour == "ALL DAY: ") {
+                    console.log(eventHour);
                     document.getElementById("allDay_list").appendChild(newLi)
                 } else {
                     document.getElementById("today_list").appendChild(newLi)

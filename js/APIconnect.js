@@ -128,41 +128,42 @@
     function listEvents(){
 
         var today = new Date();
-        console.log(today);
-        var tomorrow = new Date(today.getTime() + (72 * 60 * 60 * 1000));
-        console.log(tomorrow);
+        var aftertomorrow = new Date(today.getTime() + (72 * 60 * 60 * 1000));
 
         let request = gapi.client.calendar.events.list({
             'calendarId': 'primary',
             'timeMin': (new Date()).toISOString(),
             //'timeMax': (new Date()).toISOString(),
-            'timeMax': tomorrow.toISOString(),
+            'timeMax': aftertomorrow.toISOString(),
             'maxResults': 10,
             'singleEvents': true,
             'orderBy': 'startTime'
         });
         request.execute(function(resp){
             let todayEvents = resp.items;
-            console.log(todayEvents);
 
             todayEvents.forEach(function(element) {
                 let newLi = document.createElement("LI");
                 
                 let when = new Date(element.start.dateTime);
 
+                // let whenDate = new Date(element.start.date);
+                // console.log(whenDate);
+                
+                var options = { weekday: 'short', month: 'short', day: 'numeric' };
+                let eventDate = `${when.toLocaleDateString('en-GB', options)}`
+                if (eventDate =="Invalid Date") {
+                    eventDate = "ALL DAY: "
+                }
+
                 let eventHour = `${when.toLocaleTimeString()}`
                 if (eventHour =="Invalid Date") {
                     eventHour = "ALL DAY: "
                 }
-                console.log(eventHour);
-
-                console.log(`WHEN IS : ${eventHour}`);
                 
-                newLi.innerHTML = eventHour + " " + element.summary;
-                console.log(newLi.innerHTML);
+                newLi.innerHTML = eventDate + " " + eventHour + " " + element.summary;
 
                 if (eventHour == "ALL DAY: ") {
-                    console.log(eventHour);
                     document.getElementById("allDay_list").appendChild(newLi)
                 } else {
                     document.getElementById("today_list").appendChild(newLi)
@@ -177,27 +178,21 @@
         const form = document.getElementById("eventForm");
         
         document.getElementById("create-event").addEventListener("click", function (e) {
-        //form.submit();
 
         let eventSummary = document.getElementById("input_name").value;
-        console.log(eventSummary);
-
         let eventDescription = document.getElementById("input_description").value;
-        console.log(eventDescription);
-
         let eventLocation = document.getElementById("input_location").value;
-        console.log(eventLocation);
 
         let eventNew = {
             'summary': eventSummary,
             'location': eventLocation,
             'description': eventDescription,
             'start': {
-                'dateTime': '2017-12-17T17:00:00-07:00',
+                'dateTime': '2017-12-17T10:00:00-07:00',
                 //'timeZone': 'Europe/Warsaw'
             },
             'end': {
-                'dateTime': '2017-12-17T19:00:00-07:00',
+                'dateTime': '2017-12-17T13:00:00-07:00',
                 //'timeZone': 'Europe/Warsaw'
             },
         }
@@ -214,14 +209,13 @@
         });
         }); 
     }
+
 //Create Goal & add them to the list
 
   function addGoal () {
     const buttonGoal = document.getElementById("buttonGoal");
-    console.log(buttonGoal);
    
     buttonGoal.addEventListener("click", function (e) {
-      console.log("jest - udalo sie!");
       let goal = prompt("What do you want to achieve this week?", "watch Kevin Sam w domu?");
 
       if (goal == null || goal == "") {
@@ -230,9 +224,7 @@
           txt = goal;
       }
       let newLi = document.createElement("LI");
-      console.log(newLi);
       newLi.innerHTML = txt;
-      console.log(newLi.innerHTML);
  
       document.getElementById("mygoals").appendChild(newLi)
 

@@ -124,6 +124,14 @@
         });
 }
 
+//if signed in - show table
+    // function showTable() {
+    //   if (isSignedIn) {
+
+    //   }
+    // }
+
+
 //list events in console & in every day
     function listEvents(){
 
@@ -232,3 +240,22 @@
   };
 
   addGoal ();
+
+  //Show 7 habits after clicking on a button
+
+  function showSeven () {
+    const buttonSeven = document.getElementById("buttonSeven");
+    
+    const listSeven = document.getElementById("list-seven")
+
+    var listVisibility = window.getComputedStyle(listSeven).visibility;
+    console.log(listVisibility);
+
+    buttonSeven.addEventListener("click", function (e){
+      e.preventDefault();
+      listSeven.classList.add("seven-clicked");
+      console.log(listSeven.classList);
+    })
+  }
+
+  showSeven ();

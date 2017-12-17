@@ -9,15 +9,12 @@
         <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
     </head>
     <body>
-      <!--Actual weekly planner starts here-->
-
-      
       <h2>My weekly planner</h2>
       <span>"The key is not to prioritize what's on your schedule, but to schedule your priorities." Stephen Covey</span>
-      <pre id="content"></pre>
-
       <div>
-        <ol class="seven-habits"><h3>Remember the 7 habits?</h3>
+        <h3>Remember the 7 habits?</h3>
+        <button class ="google-button" id="buttonSeven">No - show me</button>
+        <ol class="seven-habits" id="list-seven">
           <li>Be proactive</li>
           <li>Begin with the end in mind</li>
           <li>Put First things First</li>
@@ -28,7 +25,8 @@
         </ol>
       </div>
       <div>
-        <ol class="seven-goals" id="mygoals"><h3>My weekly goals</h3>
+        <h3>My weekly goals</h3>
+        <ol class="seven-goals" id="mygoals">
         </ol>  
       </div>
       <button class ="google-button" id="buttonGoal">Add your weekly goals</button>

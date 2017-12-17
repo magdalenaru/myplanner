@@ -31,8 +31,16 @@ h2, h3 {
     margin-left: 10px;
 	margin-right: 10px;
 	text-align: left;
-	display: inline-block;
+	display: none;
 	width: 250px;
+}
+
+.seven-clicked {
+	display: inline-block;
+}
+
+#list-seven {
+	visibility: visible;
 }
 
 
